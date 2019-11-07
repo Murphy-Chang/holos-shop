@@ -1,5 +1,5 @@
 import axios from 'axios'
-import router from '@/router/index'
+// import router from '@/router/index'
 
 // 创建axios请求实例
 const service = axios.create({
@@ -12,7 +12,7 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // 每次请求都携带token
-    config.headers['access_token'] =  'Bearer' + localStorage.getItem('access_token')
+    config.headers['access_token'] = 'Bearer ' + localStorage.getItem('access_token')
     return config
   },
   error => {

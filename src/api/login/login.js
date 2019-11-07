@@ -12,12 +12,3 @@ export function login(data) {
     data: qs.stringify(data)
   })
 }
-
-// 登录
-export function authorize(data) {
-  return request({
-    url: '/oauth/authorize',
-    method: 'post',
-    data: qs.stringify(data)
-  })
-}

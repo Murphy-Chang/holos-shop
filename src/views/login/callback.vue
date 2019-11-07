@@ -10,22 +10,21 @@ import { login } from '@/api/login/login'
 
 export default {
   name: 'Callback',
-  created() {
-    this.loginForm.code = this.$route.query.code
-    debugger
-    this.handleLogin()
-  },
   data() {
     return {
       loginForm: {
-        grant_type: 'authorization_code',
         code: '',
+        grant_type: 'authorization_code',
         scope: 'server',
         client_id: 'holos1',
         client_secret: '123',
-        redirect_uri: 'http://localhost:9988/#/callback'
+        redirect_uri: 'http://localhost:9988/#/'
       }
     }
+  },
+  created() {
+    this.loginForm.code = this.$route.query.code
+    this.handleLogin()
   },
   methods: {
     handleLogin() {
